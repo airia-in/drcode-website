@@ -2,7 +2,7 @@
 
 import { BorderBeam } from "./ui/border-beam";
 import { cn } from "@/lib/utils";
-import { Target, Users, Layers, Zap, ArrowRight } from "lucide-react";
+import { Target, Users, Layers, Zap } from "lucide-react";
 
 export default function WhyDrCode() {
   const reasons = [
@@ -74,9 +74,8 @@ export default function WhyDrCode() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-semibold text-black mb-3 flex items-center gap-2">
+                  <h3 className="text-2xl font-semibold text-black mb-3">
                     {reason.title}
-                    <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#875BF8]" />
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {reason.description}

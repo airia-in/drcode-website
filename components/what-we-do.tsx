@@ -7,36 +7,36 @@ import { cn } from "@/lib/utils"
 export default function WhatWeDo() {
   const services = [
     {
-      Icon: Building2,
-      name: "AI Systems for Industrial Intelligence",
+      Icon: Mic2,
+      name: "AI Voice Systems",
       description:
-        "We are working with a well-funded US-based AI company founded by a serial entrepreneur, building AI products for the Engineering, Procurement, and Construction (EPC) industry. Our team contributes across the entire lifecycle  from product discovery and experimentation to building production-grade AI systems.",
+        "Building AI-powered voice counselors and automation tools that help scale student counseling and guidance. This includes designing intelligent conversational interfaces and building scalable voice infrastructure.",
       href: "/contact",
       cta: "Contact us",
       background: (
-        <DotPattern
+        <GridPattern
+          width={25}
+          height={25}
           className={cn(
-            "absolute inset-0 h-full w-full fill-gray-400/50",
-            "[mask-image:radial-gradient(500px_circle_at_top_right,white,transparent)]"
+            "absolute inset-0 h-full w-full stroke-gray-400/50",
+            "[mask-image:radial-gradient(600px_circle_at_bottom_right,white,transparent)]"
           )}
         />
       ),
       className: "lg:col-span-2 lg:row-span-2",
     },
     {
-      Icon: Smartphone,
-      name: "Product Infrastructure for Consumer Platforms",
+      Icon: Rocket,
+      name: "AI Platforms for Startups",
       description:
-        "We are building an internal product for a publicly listed Indian startup that helps their teams test new wall visualization systems faster and more efficiently.",
+        "Co-creating platforms with startups in logistics and consumer services, helping take products from idea to launch.",
       href: "/contact",
       cta: "Contact us",
       background: (
-        <GridPattern
-          width={20}
-          height={20}
+        <DotPattern
           className={cn(
-            "absolute inset-0 h-full w-full stroke-gray-400/50",
-            "[mask-image:radial-gradient(400px_circle_at_bottom_left,white,transparent)]"
+            "absolute inset-0 h-full w-full fill-gray-400/50",
+            "[mask-image:radial-gradient(400px_circle_at_top_left,white,transparent)]"
           )}
         />
       ),
@@ -62,36 +62,36 @@ export default function WhatWeDo() {
       className: "lg:col-span-1 lg:row-span-2",
     },
     {
-      Icon: Rocket,
-      name: "AI Platforms for Startups",
+      Icon: Smartphone,
+      name: "Product Infrastructure for Consumer Platforms",
       description:
-        "We are co-creating platforms with startups in logistics and consumer services, helping take products from idea to launch.",
+        "Building internal products that help teams test new wall visualization systems faster and more efficiently.",
       href: "/contact",
       cta: "Contact us",
       background: (
-        <DotPattern
+        <GridPattern
+          width={20}
+          height={20}
           className={cn(
-            "absolute inset-0 h-full w-full fill-gray-400/50",
-            "[mask-image:radial-gradient(400px_circle_at_top_left,white,transparent)]"
+            "absolute inset-0 h-full w-full stroke-gray-400/50",
+            "[mask-image:radial-gradient(400px_circle_at_bottom_left,white,transparent)]"
           )}
         />
       ),
       className: "lg:col-span-1 lg:row-span-2",
     },
     {
-      Icon: Mic2,
-      name: "AI Voice Systems",
+      Icon: Building2,
+      name: "AI Systems for Industrial Intelligence",
       description:
-        "With Mindler, we are building AI-powered voice counselors and automation tools that help scale student counseling and guidance. This includes designing intelligent conversational interfaces and building scalable voice infrastructure.",
+        "Building AI products for the Engineering, Procurement, and Construction (EPC) industry. Our team contributes across the entire lifecycle from product discovery and experimentation to building production-grade AI systems.",
       href: "/contact",
       cta: "Contact us",
       background: (
-        <GridPattern
-          width={25}
-          height={25}
+        <DotPattern
           className={cn(
-            "absolute inset-0 h-full w-full stroke-gray-400/50",
-            "[mask-image:radial-gradient(600px_circle_at_bottom_right,white,transparent)]"
+            "absolute inset-0 h-full w-full fill-gray-400/50",
+            "[mask-image:radial-gradient(500px_circle_at_top_right,white,transparent)]"
           )}
         />
       ),
