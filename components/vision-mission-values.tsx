@@ -25,7 +25,7 @@ export default function VisionMissionValues() {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section id="about" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-6">
