@@ -38,7 +38,7 @@ export const Footer = ({
   return (
     <section className={cn("relative w-full mt-0 overflow-hidden", className)}>
       <footer className="border-t bg-background mt-20 relative">
-        <div className="max-w-7xl mx-auto min-h-[22rem] sm:min-h-[24rem] md:min-h-[26rem] relative px-6 py-12">
+        <div className="max-w-7xl mx-auto min-h-[18rem] sm:min-h-[24rem] md:min-h-[26rem] relative px-6 py-10 sm:py-12">
           {/* Main footer content */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 mb-8">
             {/* Brand section - left side */}
@@ -118,7 +118,7 @@ export const Footer = ({
 
         {/* Large background text - DrCode fade effect */}
         <div
-          className="bg-gradient-to-b from-foreground/20 via-foreground/10 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-16 md:bottom-12 font-extrabold tracking-tighter pointer-events-none select-none text-center px-4"
+          className="hidden md:block bg-gradient-to-b from-foreground/35 via-foreground/18 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-12 md:bottom-10 font-extrabold tracking-tighter pointer-events-none select-none text-center px-4 z-0"
           style={{
             fontSize: "clamp(3rem, 12vw, 10rem)",
             maxWidth: "95vw",
@@ -128,10 +128,10 @@ export const Footer = ({
         </div>
 
         {/* Bottom line */}
-        <div className="absolute bottom-12 sm:bottom-14 backdrop-blur-sm h-1 bg-gradient-to-r from-transparent via-border to-transparent w-full left-1/2 -translate-x-1/2"></div>
+        <div className="absolute bottom-10 sm:bottom-14 backdrop-blur-sm h-1 bg-gradient-to-r from-transparent via-border to-transparent w-full left-1/2 -translate-x-1/2"></div>
 
         {/* Bottom shadow */}
-        <div className="bg-gradient-to-t from-background via-background/70 blur-[1em] to-background/30 absolute bottom-8 w-full h-1"></div>
+        <div className="bg-gradient-to-t from-background via-background/70 blur-[1em] to-background/30 absolute bottom-6 sm:bottom-8 w-full h-10 sm:h-12"></div>
       </footer>
     </section>
   );

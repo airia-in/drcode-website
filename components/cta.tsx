@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 export default function CTA() {
@@ -8,12 +9,14 @@ export default function CTA() {
           Ready to build something great?
         </h2>
         <div className="flex justify-center">
-          <Button
-            size="lg"
-            className="bg-black hover:bg-gray-900 text-white px-8 py-6 text-lg font-medium"
-          >
-            Get Started
-          </Button>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="bg-black hover:bg-gray-900 text-white px-8 py-6 text-lg font-medium"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
