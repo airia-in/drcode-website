@@ -131,7 +131,7 @@ export const Footer = ({
         <div className="absolute bottom-12 sm:bottom-14 backdrop-blur-sm h-1 bg-gradient-to-r from-transparent via-border to-transparent w-full left-1/2 -translate-x-1/2"></div>
 
         {/* Bottom shadow */}
-        <div className="bg-gradient-to-t from-background via-background/80 blur-[1em] to-background/40 absolute bottom-8 w-full h-16"></div>
+        <div className="bg-gradient-to-t from-background via-background/70 blur-[1em] to-background/30 absolute bottom-8 w-full h-1"></div>
       </footer>
     </section>
   );

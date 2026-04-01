@@ -38,14 +38,11 @@ export default function VisionMissionValues() {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {items.map((item, index) => (
-            <div
-              key={index}
-              className="group relative"
-            >
+            <div key={index} className="group relative">
               <div
                 className={cn(
                   "relative overflow-hidden rounded-2xl bg-white border border-gray-200 p-8 h-full",
-                  "transition-all duration-500 hover:border-[#875BF8]/30"
+                  "transition-all duration-500 hover:border-[#875BF8]/30",
                 )}
               >
                 {/* Shine effect on hover */}
@@ -54,7 +51,10 @@ export default function VisionMissionValues() {
                 </div>
 
                 {/* Large number background */}
-                <div className="absolute -top-4 -right-4 text-[120px] font-bold text-gray-100 select-none leading-none group-hover:text-[#875BF8]/10 transition-colors duration-500">
+                <div
+                  aria-hidden="true"
+                  className="absolute top-2 right-3 z-[1] text-[96px] font-extrabold text-gray-200 select-none leading-none pointer-events-none group-hover:text-[#875BF8]/30 transition-colors duration-500"
+                >
                   {item.number}
                 </div>
 
@@ -77,7 +77,7 @@ export default function VisionMissionValues() {
                 </div>
 
                 {/* Bottom line accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#875BF8] to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#875BF8]/80 to-indigo-500/80 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
             </div>
           ))}

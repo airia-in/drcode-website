@@ -1,4 +1,3 @@
-
 export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 px-6">
@@ -8,10 +7,13 @@ export default function About() {
         </h2>
         <div className="space-y-6">
           <p className="text-2xl md:text-3xl text-black leading-relaxed font-medium">
-            DrCode is an AI venture studio that builds products from idea to production.
+            DrCode is an AI venture studio that builds products from idea to
+            production.
           </p>
           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-            We work with startups and companies to turn concepts into scalable AI systems. No consultants. No contractors. Just experienced builders who ship real products.
+            We work with startups and large enterprises to turn concepts into
+            scalable AI systems. No consultants. No contractors. Just
+            experienced builders who ship real products.
           </p>
         </div>
       </div>

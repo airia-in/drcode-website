@@ -18,7 +18,7 @@ export default function FAQ() {
     {
       question: "What industries do you work with?",
       answer:
-        "We work across various industries including healthcare, fintech, e-commerce, education, and enterprise SaaS. Our team has experience building AI solutions for startups and Fortune 500 companies alike. If you have a problem that AI can solve, we can help.",
+        "We work across various industries including healthcare, fintech, e-commerce, education, and enterprise SaaS. Our team has experience building AI solutions for startups to large enterprises companies alike. If you have a problem that AI can solve, we can help.",
     },
     {
       question: "Do you offer ongoing support after launch?",
@@ -34,7 +34,11 @@ export default function FAQ() {
           Common questions
         </h2>
 
-        <Accordion type="single" collapsible className="space-y-6 max-w-3xl mx-auto">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-6 max-w-3xl mx-auto"
+        >
           {faqs.map((faq, index) => (
             <div key={index} className="group relative">
               <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white px-6 transition-all duration-300 hover:border-[#875BF8]/30 hover:shadow-lg">
@@ -48,10 +52,7 @@ export default function FAQ() {
                   className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
 
-                <AccordionItem
-                  value={`item-${index}`}
-                  className="border-b-0"
-                >
+                <AccordionItem value={`item-${index}`} className="border-b-0">
                   <AccordionTrigger className="text-xl md:text-2xl font-semibold text-black hover:no-underline py-6 hover:text-[#875BF8] transition-colors">
                     {faq.question}
                   </AccordionTrigger>

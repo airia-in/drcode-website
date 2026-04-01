@@ -1,8 +1,14 @@
-import { BentoCard, BentoGrid } from "@/components/ui/bento-grid"
-import { DotPattern } from "@/components/ui/dot-pattern"
-import { GridPattern } from "@/components/ui/grid-pattern"
-import { Building2, Smartphone, Rocket, Mic2, MessageSquare } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import {
+  Building2,
+  Smartphone,
+  Rocket,
+  Mic2,
+  MessageSquare,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function WhatWeDo() {
   const services = [
@@ -11,15 +17,13 @@ export default function WhatWeDo() {
       name: "AI Voice Systems",
       description:
         "Building AI-powered voice counselors and automation tools that help scale student counseling and guidance. This includes designing intelligent conversational interfaces and building scalable voice infrastructure.",
-      href: "/contact",
-      cta: "Contact us",
       background: (
         <GridPattern
           width={25}
           height={25}
           className={cn(
             "absolute inset-0 h-full w-full stroke-gray-400/50",
-            "[mask-image:radial-gradient(600px_circle_at_bottom_right,white,transparent)]"
+            "[mask-image:radial-gradient(600px_circle_at_bottom_right,white,transparent)]",
           )}
         />
       ),
@@ -30,13 +34,11 @@ export default function WhatWeDo() {
       name: "AI Platforms for Startups",
       description:
         "Co-creating platforms with startups in logistics and consumer services, helping take products from idea to launch.",
-      href: "/contact",
-      cta: "Contact us",
       background: (
         <DotPattern
           className={cn(
             "absolute inset-0 h-full w-full fill-gray-400/50",
-            "[mask-image:radial-gradient(400px_circle_at_top_left,white,transparent)]"
+            "[mask-image:radial-gradient(400px_circle_at_top_left,white,transparent)]",
           )}
         />
       ),
@@ -48,14 +50,13 @@ export default function WhatWeDo() {
       description:
         "An AI-powered platform for conducting technical interviews. Streamlines the hiring process with intelligent assessment, real-time code evaluation, and comprehensive candidate insights.",
       href: "https://interviewbot.drcode.ai/",
-      cta: "Try it",
       background: (
         <GridPattern
           width={18}
           height={18}
           className={cn(
             "absolute inset-0 h-full w-full stroke-gray-400/50",
-            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)]"
+            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)]",
           )}
         />
       ),
@@ -66,15 +67,13 @@ export default function WhatWeDo() {
       name: "Product Infrastructure for Consumer Platforms",
       description:
         "Building internal products that help teams test new wall visualization systems faster and more efficiently.",
-      href: "/contact",
-      cta: "Contact us",
       background: (
         <GridPattern
           width={20}
           height={20}
           className={cn(
             "absolute inset-0 h-full w-full stroke-gray-400/50",
-            "[mask-image:radial-gradient(400px_circle_at_bottom_left,white,transparent)]"
+            "[mask-image:radial-gradient(400px_circle_at_bottom_left,white,transparent)]",
           )}
         />
       ),
@@ -85,13 +84,11 @@ export default function WhatWeDo() {
       name: "AI Systems for Industrial Intelligence",
       description:
         "Building AI products for the Engineering, Procurement, and Construction (EPC) industry. Our team contributes across the entire lifecycle from product discovery and experimentation to building production-grade AI systems.",
-      href: "/contact",
-      cta: "Contact us",
       background: (
         <DotPattern
           className={cn(
             "absolute inset-0 h-full w-full fill-gray-400/50",
-            "[mask-image:radial-gradient(500px_circle_at_top_right,white,transparent)]"
+            "[mask-image:radial-gradient(500px_circle_at_top_right,white,transparent)]",
           )}
         />
       ),
