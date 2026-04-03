@@ -13,16 +13,16 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How long does it take?",
-      answer: "4-12 weeks from discovery to production. We move fast.",
+      question: "How long does it take to build an AI product?",
+      answer: "The timeline varies based on complexity, but most projects range from 4-12 weeks. We start with a discovery phase to understand your needs, then move into rapid prototyping and iterative development. Our goal is to get you to production as quickly as possible while maintaining quality.",
     },
     {
-      question: "What industries?",
-      answer: "Healthcare, fintech, e-commerce, education, enterprise SaaS.",
+      question: "What industries do you work with?",
+      answer: "We work across various industries including healthcare, fintech, e-commerce, education, and enterprise SaaS. Our team has experience building AI solutions for startups to large enterprises companies alike. If you have a problem that AI can solve, we can help.",
     },
     {
-      question: "Support after launch?",
-      answer: "Yes. Monitoring, maintenance, scaling, and team training.",
+      question: "Do you offer ongoing support after launch?",
+      answer: "Yes, we provide comprehensive post-launch support including monitoring, maintenance, and continuous improvement. We can also help you scale your AI infrastructure as your user base grows and provide training for your internal team to manage the product.",
     },
   ];
 

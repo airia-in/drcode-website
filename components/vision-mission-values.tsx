@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import { cn } from "@/lib/utils";
 
 export default function VisionMissionValues() {
   const items = [
@@ -43,6 +46,34 @@ export default function VisionMissionValues() {
           {items.map((item, index) => (
             <div key={index} className="group relative">
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 p-10 h-full hover:border-[#875BF8] transition-all duration-300 hover:shadow-2xl">
+                {/* Background pattern - alternating between Grid and Dot */}
+                {index === 0 && (
+                  <DotPattern
+                    className={cn(
+                      "absolute inset-0 h-full w-full fill-purple-400/30",
+                      "[mask-image:radial-gradient(400px_circle_at_top_left,white,transparent)]",
+                    )}
+                  />
+                )}
+                {index === 1 && (
+                  <GridPattern
+                    width={20}
+                    height={20}
+                    className={cn(
+                      "absolute inset-0 h-full w-full stroke-blue-400/30",
+                      "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+                    )}
+                  />
+                )}
+                {index === 2 && (
+                  <DotPattern
+                    className={cn(
+                      "absolute inset-0 h-full w-full fill-indigo-400/30",
+                      "[mask-image:radial-gradient(400px_circle_at_top_right,white,transparent)]",
+                    )}
+                  />
+                )}
+
                 {/* Background gradient */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
