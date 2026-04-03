@@ -34,7 +34,7 @@ export default function WhatWeDo() {
             width={220}
             height={220}
             loading="lazy"
-            className="pointer-events-none absolute -right-4 -top-6 md:h-40 md:w-40 h-32 w-32 object-contain opacity-80 transition-transform duration-500 group-hover:scale-110"
+            className="pointer-events-none absolute -right-4 -top-6 md:h-40 md:w-40 h-32 w-32 object-contain opacity-80 transition-all duration-300 ease-out group-hover:scale-105 group-hover:opacity-90"
           />
           <Image
             src="/illustration/microphone.svg"
@@ -67,7 +67,7 @@ export default function WhatWeDo() {
             width={160}
             height={160}
             loading="lazy"
-            className="pointer-events-none absolute right-1 top-2 md:h-28 md:w-28 h-20 w-20 object-contain opacity-85 transition-transform duration-500 group-hover:-translate-y-1"
+            className="pointer-events-none absolute right-1 top-2 md:h-28 md:w-28 h-20 w-20 object-contain opacity-85 transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:opacity-95"
           />
         </>
       ),
@@ -95,7 +95,7 @@ export default function WhatWeDo() {
             width={160}
             height={160}
             loading="lazy"
-            className="pointer-events-none absolute -right-2 top-1 md:h-28 md:w-28 h-20 w-20 object-contain opacity-85 transition-transform duration-500 group-hover:scale-105"
+            className="pointer-events-none absolute -right-2 top-1 md:h-28 md:w-28 h-20 w-20 object-contain opacity-85 transition-all duration-300 ease-out group-hover:scale-103 group-hover:opacity-95"
           />
         </>
       ),
@@ -122,7 +122,7 @@ export default function WhatWeDo() {
             width={150}
             height={150}
             loading="lazy"
-            className="pointer-events-none absolute right-2 -top-2 md:h-20 md:w-20 h-16 w-16 object-contain opacity-80 transition-transform duration-500 group-hover:rotate-2"
+            className="pointer-events-none absolute right-2 -top-2 md:h-20 md:w-20 h-16 w-16 object-contain opacity-80 transition-all duration-300 ease-out group-hover:rotate-1 group-hover:opacity-90"
           />
         </>
       ),
@@ -147,7 +147,7 @@ export default function WhatWeDo() {
             width={170}
             height={170}
             loading="lazy"
-            className="pointer-events-none absolute -right-3 -top-2 md:h-24 md:w-24 h-16 w-16 object-contain opacity-80 transition-transform duration-500 group-hover:scale-105"
+            className="pointer-events-none absolute -right-3 -top-2 md:h-24 md:w-24 h-16 w-16 object-contain opacity-80 transition-all duration-300 ease-out group-hover:scale-103 group-hover:opacity-90"
           />
         </>
       ),
@@ -159,10 +159,10 @@ export default function WhatWeDo() {
     <section id="what-we-do" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold text-gray-900 mb-6 leading-[0.95] tracking-[-0.02em]">
             What we build
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-8">
             Real AI products solving real problems
           </p>
         </div>

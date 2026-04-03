@@ -37,6 +37,9 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+// Smooth easing
+const easeOutQuart: [number, number, number, number] = [0.25, 1, 0.5, 1];
+
 const AnimatedTestimonials = ({
   testimonials,
   autoplay = true,
@@ -47,7 +50,7 @@ const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
 
   const rotations = useMemo(
-    () => testimonials.map(() => `${Math.floor(Math.random() * 16) - 8}deg`),
+    () => testimonials.map(() => `${Math.floor(Math.random() * 12) - 6}deg`),
     [testimonials],
   );
 
@@ -78,21 +81,21 @@ const AnimatedTestimonials = ({
                   key={testimonial.src}
                   initial={{
                     opacity: 0,
-                    scale: 0.9,
-                    y: 50,
+                    scale: 0.95,
+                    y: 30,
                     rotate: rotations[index],
                   }}
                   animate={{
                     opacity: 1,
-                    scale: isActive(index) ? 1 : 0.9,
-                    y: isActive(index) ? 0 : 20,
+                    scale: isActive(index) ? 1 : 0.95,
+                    y: isActive(index) ? 0 : 15,
                     zIndex: isActive(index)
                       ? testimonials.length
                       : testimonials.length - Math.abs(index - active),
                     rotate: isActive(index) ? "0deg" : rotations[index],
                   }}
-                  exit={{ opacity: 0, scale: 0.9, y: -50 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  exit={{ opacity: 0, scale: 0.95, y: -30 }}
+                  transition={{ duration: 0.4, ease: easeOutQuart }}
                   className="absolute inset-0 origin-bottom"
                   style={{ perspective: "1000px" }}
                 >
@@ -102,7 +105,7 @@ const AnimatedTestimonials = ({
                     width={500}
                     height={500}
                     draggable={false}
-                    className="h-full w-full rounded-3xl bg-white object-cover shadow-2xl"
+                    className="h-full w-full rounded-3xl bg-white object-cover shadow-xl"
                   />
                 </motion.div>
               ))}
@@ -114,17 +117,17 @@ const AnimatedTestimonials = ({
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.25, ease: easeOutQuart }}
               className="flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
+                <h3 className="text-2xl font-semibold tracking-tight text-gray-900">
                   {testimonials[active].name}
                 </h3>
-                <motion.p className="mt-8 text-lg leading-8 text-slate-700">
+                <motion.p className="mt-8 text-lg leading-8 text-gray-600">
                   {testimonials[active].quote}
                 </motion.p>
               </div>
@@ -134,16 +137,16 @@ const AnimatedTestimonials = ({
             <button
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-colors hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+              className="group flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 transition-all duration-200 ease-out hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2 active:scale-95"
             >
-              <ArrowLeft className="h-5 w-5 text-slate-800 transition-transform duration-300 group-hover:-translate-x-1" />
+              <ArrowLeft className="h-5 w-5 text-gray-700 transition-transform duration-200 ease-out group-hover:-translate-x-0.5" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 transition-colors hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+              className="group flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 transition-all duration-200 ease-out hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2 active:scale-95"
             >
-              <ArrowRight className="h-5 w-5 text-slate-800 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 text-gray-700 transition-transform duration-200 ease-out group-hover:translate-x-0.5" />
             </button>
           </div>
         </div>
@@ -158,11 +161,11 @@ function AnimatedTestimonialsDemo() {
 
 export function Component() {
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-white">
-      <div className="z-10 w-full">
-        <div className="text-center mb-12 px-4">
-          <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold text-gray-900 mb-4 leading-[0.95] tracking-[-0.02em]">
-            What Our Clients Say
+    <section className="relative w-full py-24 md:py-32 overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-4 leading-[0.95] tracking-[-0.02em]">
+            What our clients say
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-[58ch] mx-auto leading-8">
             Real feedback from founders and teams we've partnered with
@@ -170,6 +173,17 @@ export function Component() {
         </div>
         <AnimatedTestimonialsDemo />
       </div>
-    </div>
+
+      {/* Reduced motion support */}
+      <style jsx global>{`
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
+    </section>
   );
 }

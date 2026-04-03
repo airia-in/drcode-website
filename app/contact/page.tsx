@@ -43,13 +43,13 @@ export default function ContactPage() {
             {/* Left: Header & Illustration */}
             <div className="space-y-8">
               <div>
-                <p className="text-sm md:text-base font-semibold tracking-widest uppercase text-[#875BF8] mb-4">
+                <p className="text-sm md:text-base font-medium tracking-widest uppercase text-[#875BF8] mb-4">
                   Get in touch
                 </p>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 tracking-tight">
+                <h1 className="text-5xl md:text-6xl font-semibold mb-6 text-gray-900 tracking-[-0.02em] leading-[0.95]">
                   Contact Us
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
                   Let's discuss how we can help you build something great
                 </p>
               </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
               <div className="flex justify-center lg:justify-start">
                 <Image
                   src="/illustration/work-from-home.svg"
-                  alt="Contact Us"
+                  alt="Person working from home"
                   width={400}
                   height={400}
                   priority
@@ -78,19 +78,19 @@ export default function ContactPage() {
       {/* Contact Info Cards Section - below the fold */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center mb-10 tracking-[-0.02em]">
             Other ways to reach us
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <a
               href="tel:+919999410384"
-              className="bg-white border-2 border-gray-100 rounded-3xl p-8 text-center hover:border-[#875BF8] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block group"
+              className="bg-white border-2 border-gray-100 rounded-3xl p-8 text-center hover:border-[#875BF8] hover:shadow-lg transition-all duration-200 hover:-translate-y-1 block group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#875BF8]/10 group-hover:bg-[#875BF8]/20 transition-colors duration-300 mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#875BF8]/10 group-hover:bg-[#875BF8]/20 transition-colors duration-200 mb-6">
                 <Phone className="w-8 h-8 text-[#875BF8]" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#875BF8] transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-[#875BF8] transition-colors duration-200">
                 Phone
               </h3>
               <span className="text-lg text-gray-600 font-medium">
@@ -100,12 +100,12 @@ export default function ContactPage() {
 
             <a
               href="mailto:hello@drcode.ai"
-              className="bg-white border-2 border-gray-100 rounded-3xl p-8 text-center hover:border-[#875BF8] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block group"
+              className="bg-white border-2 border-gray-100 rounded-3xl p-8 text-center hover:border-[#875BF8] hover:shadow-lg transition-all duration-200 hover:-translate-y-1 block group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#875BF8]/10 group-hover:bg-[#875BF8]/20 transition-colors duration-300 mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#875BF8]/10 group-hover:bg-[#875BF8]/20 transition-colors duration-200 mb-6">
                 <Mail className="w-8 h-8 text-[#875BF8]" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#875BF8] transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-[#875BF8] transition-colors duration-200">
                 Email
               </h3>
               <span className="text-lg text-gray-600 font-medium">
@@ -118,9 +118,9 @@ export default function ContactPage() {
           <div className="mt-12 text-center">
             <Link
               href="/"
-              className="text-[#875BF8] hover:text-[#6d4ac6] font-semibold inline-flex items-center gap-2 transition-colors duration-200"
+              className="text-[#875BF8] hover:text-[#6d4ac6] font-medium inline-flex items-center gap-2 transition-colors duration-200 focus:outline-none focus-visible:underline"
             >
-              &larr; Back to Home
+              ← Back to Home
             </Link>
           </div>
         </div>

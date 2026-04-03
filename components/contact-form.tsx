@@ -45,7 +45,7 @@ export default function ContactForm() {
           message: data.error || "Something went wrong. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setStatus({
         type: "error",
         message: "Failed to send message. Please try again later.",
@@ -67,10 +67,10 @@ export default function ContactForm() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 md:p-12 shadow-lg">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900 text-center tracking-[-0.02em]">
           Send us a message
         </h2>
-        <p className="text-gray-600 text-center mb-8">
+        <p className="text-gray-600 text-center mb-8 leading-relaxed">
           We'll respond within 24 hours
         </p>
 
@@ -79,9 +79,9 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-semibold text-gray-900 mb-2"
+                className="block text-sm font-medium text-gray-900 mb-2"
               >
-                Name *
+                Name <span className="text-[#875BF8]">*</span>
               </label>
               <input
                 type="text"
@@ -90,7 +90,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900 placeholder:text-gray-400"
                 placeholder="Your name"
               />
             </div>
@@ -98,9 +98,9 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-semibold text-gray-900 mb-2"
+                className="block text-sm font-medium text-gray-900 mb-2"
               >
-                Email *
+                Email <span className="text-[#875BF8]">*</span>
               </label>
               <input
                 type="email"
@@ -109,7 +109,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900 placeholder:text-gray-400"
                 placeholder="your@email.com"
               />
             </div>
@@ -118,9 +118,9 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="subject"
-              className="block text-sm font-semibold text-gray-900 mb-2"
+              className="block text-sm font-medium text-gray-900 mb-2"
             >
-              Subject *
+              Subject <span className="text-[#875BF8]">*</span>
             </label>
             <input
               type="text"
@@ -129,7 +129,7 @@ export default function ContactForm() {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900"
+              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 bg-white text-gray-900 placeholder:text-gray-400"
               placeholder="How can we help?"
             />
           </div>
@@ -137,9 +137,9 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-semibold text-gray-900 mb-2"
+              className="block text-sm font-medium text-gray-900 mb-2"
             >
-              Message *
+              Message <span className="text-[#875BF8]">*</span>
             </label>
             <textarea
               id="message"
@@ -148,18 +148,19 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 resize-none bg-white text-gray-900"
+              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-[#875BF8]/20 focus:border-[#875BF8] outline-none transition-all duration-200 resize-none bg-white text-gray-900 placeholder:text-gray-400"
               placeholder="Tell us more about your project or inquiry..."
             />
           </div>
 
           {status.type && (
             <div
-              className={`p-4 rounded-xl font-medium ${
+              className={`p-4 rounded-xl text-sm font-medium ${
                 status.type === "success"
                   ? "bg-green-50 text-green-800 border-2 border-green-200"
                   : "bg-red-50 text-red-800 border-2 border-red-200"
               }`}
+              role="alert"
             >
               {status.message}
             </div>
@@ -168,7 +169,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#875BF8] hover:bg-[#6d4ac6] text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-[0.98]"
+            className="w-full bg-[#875BF8] hover:bg-[#6d4ac6] text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2"
           >
             {isSubmitting ? (
               <>

@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="space-y-6 pointer-events-none z-10 text-center absolute px-6">
         {/* Staggered entrance animations */}
         <p
-          className="text-sm md:text-base font-medium tracking-widest uppercase text-purple-600 transition-all duration-700 ease-out"
+          className="text-sm md:text-base font-medium tracking-widest uppercase text-[#875BF8] transition-all duration-700 ease-out"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(20px)",
@@ -35,7 +35,7 @@ export default function Hero() {
           AI Venture Studio
         </p>
         <h1
-          className="font-semibold text-5xl md:text-7xl whitespace-pre-wrap text-gray-900 transition-all duration-700 ease-out"
+          className="font-semibold text-5xl md:text-7xl whitespace-pre-wrap text-gray-900 transition-all duration-700 ease-out tracking-[-0.02em]"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(20px)",
@@ -49,7 +49,7 @@ export default function Hero() {
           from Idea to Production
         </h1>
         <p
-          className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto transition-all duration-700 ease-out"
+          className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto transition-all duration-700 ease-out leading-relaxed"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(20px)",
@@ -71,13 +71,10 @@ export default function Hero() {
           <Link href="/contact">
             <Button
               size="lg"
-              className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-6 text-base rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 group"
+              className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-6 text-base rounded-full transition-all duration-200 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2 active:scale-[0.98]"
             >
               <span className="inline-flex items-center gap-2">
                 Start a Project
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
               </span>
             </Button>
           </Link>

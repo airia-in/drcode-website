@@ -36,20 +36,20 @@ export default function VisionMissionValues() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.5,
+        ease: "easeOut" as const,
       },
     },
   };
@@ -59,10 +59,10 @@ export default function VisionMissionValues() {
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold text-gray-900 mb-6 leading-[0.95] tracking-[-0.02em]">
             Who we are
@@ -84,10 +84,10 @@ export default function VisionMissionValues() {
               key={index}
               variants={cardVariants}
               className="group relative"
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 p-10 h-full hover:border-[#875BF8] transition-all duration-300 hover:shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 p-10 h-full hover:border-[#875BF8] transition-all duration-200 hover:shadow-xl">
                 {/* Background pattern - alternating between Grid and Dot */}
                 {index === 0 && (
                   <DotPattern
@@ -118,14 +118,14 @@ export default function VisionMissionValues() {
 
                 {/* Background gradient */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
+                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none`}
                 />
 
                 {/* Illustration */}
                 <div className="relative mb-8 h-56 flex items-center justify-center">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 2 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
                   >
                     <Image
                       src={item.image}
@@ -139,11 +139,10 @@ export default function VisionMissionValues() {
                   <motion.div
                     className="pointer-events-none absolute right-1 top-1"
                     animate={{
-                      y: [0, -8, 0],
-                      rotate: [0, 5, 0],
+                      y: [0, -6, 0],
                     }}
                     transition={{
-                      duration: 3,
+                      duration: 4,
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
@@ -154,7 +153,7 @@ export default function VisionMissionValues() {
                       width={76}
                       height={76}
                       loading="lazy"
-                      className="h-12 w-12 object-contain opacity-65"
+                      className="h-12 w-12 object-contain opacity-60"
                     />
                   </motion.div>
                 </div>
@@ -173,6 +172,17 @@ export default function VisionMissionValues() {
           ))}
         </motion.div>
       </div>
+
+      {/* Reduced motion support */}
+      <style jsx global>{`
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

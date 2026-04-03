@@ -3,20 +3,31 @@ import { Button } from "./ui/button";
 
 export default function CTA() {
   return (
-    <section className="py-32 md:py-40 px-6 bg-white">
-      <div className="max-w-5xl mx-auto text-center">
-        {/* Ultra-minimal centered text */}
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-12 leading-tight tracking-tight">
-          Ready to build something great?
+    <section className="py-28 md:py-40 px-6 bg-white">
+      <div className="max-w-3xl mx-auto text-center">
+        {/* Large display heading */}
+        <h2 
+          className="font-extrabold text-gray-900 mb-6 tracking-[-0.03em]"
+          style={{
+            fontSize: "clamp(2.75rem, 6vw + 1rem, 5.5rem)",
+            lineHeight: 1.05,
+          }}
+        >
+          Ready to build<br className="hidden sm:block" /> something great?
         </h2>
+        
+        {/* Subtext */}
+        <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-xl mx-auto leading-relaxed">
+          Let's turn your idea into a production-ready AI product.
+        </p>
 
-        {/* Single CTA button */}
+        {/* CTA button */}
         <Link href="/contact">
           <Button
             size="lg"
-            className="bg-black hover:bg-gray-900 text-white px-12 py-7 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 active:scale-95"
+            className="bg-gray-900 hover:bg-gray-800 text-white px-12 py-7 text-lg font-semibold rounded-full transition-all duration-200 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-[#875BF8] focus-visible:ring-offset-2 active:scale-[0.98]"
           >
-            Get Started
+            Start a Project
           </Button>
         </Link>
       </div>

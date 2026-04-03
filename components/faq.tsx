@@ -14,11 +14,11 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How long does it take to build an AI product?",
-      answer: "The timeline varies based on complexity, but most projects range from 4-12 weeks. We start with a discovery phase to understand your needs, then move into rapid prototyping and iterative development. Our goal is to get you to production as quickly as possible while maintaining quality.",
+      answer: "The timeline varies based on complexity, but most projects range from 4–12 weeks. We start with a discovery phase to understand your needs, then move into rapid prototyping and iterative development. Our goal is to get you to production as quickly as possible while maintaining quality.",
     },
     {
       question: "What industries do you work with?",
-      answer: "We work across various industries including healthcare, fintech, e-commerce, education, and enterprise SaaS. Our team has experience building AI solutions for startups to large enterprises companies alike. If you have a problem that AI can solve, we can help.",
+      answer: "We work across various industries including healthcare, fintech, e-commerce, education, and enterprise SaaS. Our team has experience building AI solutions for startups to large enterprises alike. If you have a problem that AI can solve, we can help.",
     },
     {
       question: "Do you offer ongoing support after launch?",
@@ -34,31 +34,32 @@ export default function FAQ() {
           <div className="flex items-center justify-center lg:order-1">
             <Image
               src={featureIllustration}
-              alt="Questions"
-              width={500}
-              height={500}
+              alt="Frequently asked questions"
+              width={400}
+              height={400}
+              loading="lazy"
               className="object-contain"
             />
           </div>
 
           {/* Right: FAQ */}
           <div className="lg:order-2">
-            <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold text-gray-900 mb-12 leading-[0.95] tracking-[-0.02em]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 mb-10 leading-[0.95] tracking-[-0.02em]">
               Common questions
             </h2>
 
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <div key={index} className="group">
-                  <div className="relative overflow-hidden rounded-2xl border-2 border-gray-200 bg-white px-6 transition-all duration-300 hover:border-[#875BF8] hover:shadow-xl">
+                  <div className="relative overflow-hidden rounded-2xl border-2 border-gray-100 bg-white px-6 transition-all duration-200 hover:border-[#875BF8] hover:shadow-lg">
                     <AccordionItem
                       value={`item-${index}`}
                       className="border-b-0"
                     >
-                      <AccordionTrigger className="text-lg md:text-xl font-semibold tracking-tight text-gray-900 hover:no-underline py-6 hover:text-[#875BF8] transition-colors duration-300">
+                      <AccordionTrigger className="text-lg md:text-xl font-semibold tracking-tight text-gray-900 hover:no-underline py-6 hover:text-[#875BF8] transition-colors duration-200 text-left">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-gray-700 text-base md:text-lg leading-8 pb-6">
+                      <AccordionContent className="text-gray-600 text-base md:text-lg leading-relaxed pb-6">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>

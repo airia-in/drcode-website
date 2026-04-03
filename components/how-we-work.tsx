@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Smooth easing curves
+const easeOutQuart: [number, number, number, number] = [0.25, 1, 0.5, 1];
+
 export default function HowWeWork() {
   const steps = [
     {
@@ -36,19 +39,20 @@ export default function HowWeWork() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.5,
+        ease: easeOutQuart,
       },
     },
   };
@@ -61,10 +65,10 @@ export default function HowWeWork() {
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="mb-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: easeOutQuart }}
         >
           <h2 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold text-gray-900 mb-6 leading-[0.95] tracking-[-0.02em]">
             How we work
@@ -93,8 +97,8 @@ export default function HowWeWork() {
               {/* Number & Image Side */}
               <motion.div
                 className="flex-shrink-0 relative md:w-64"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3, ease: easeOutQuart }}
               >
                 <div className="relative w-64 h-64 flex items-center justify-center">
                   {/* Step number - large background */}
@@ -123,7 +127,8 @@ export default function HowWeWork() {
               }`}>
                 <motion.div
                   className="inline-block mb-3 px-4 py-1 bg-purple-100 text-purple-900 rounded-full text-sm font-semibold"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
                 >
                   Step {step.number}
                 </motion.div>
@@ -140,6 +145,17 @@ export default function HowWeWork() {
           ))}
         </motion.div>
       </div>
+
+      {/* Reduced motion support */}
+      <style jsx global>{`
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

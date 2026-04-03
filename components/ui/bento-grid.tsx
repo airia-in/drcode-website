@@ -48,9 +48,11 @@ const BentoCard = ({
     className={cn(
       "group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-xl",
       // light styles
-      "bg-white border border-gray-200",
+      "bg-white border border-gray-200 hover:border-[#875BF8]/50",
       // dark styles
       "dark:bg-background dark:border-gray-800",
+      // smooth transitions
+      "transition-all duration-200 ease-out hover:shadow-lg",
       className,
     )}
     {...props}
@@ -59,25 +61,27 @@ const BentoCard = ({
     <div className="p-4">
       <div
         className={cn(
-          "pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300",
+          "pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-200 ease-out",
           href && cta && "lg:group-hover:-translate-y-10",
         )}
       >
-        <Icon className="h-10 w-10 origin-left transform-gpu text-black transition-all duration-300 ease-in-out group-hover:scale-75" />
-        <h3 className="text-lg font-semibold text-black">{name}</h3>
-        <p className="max-w-lg text-gray-600 text-sm">{description}</p>
+        <Icon className="h-10 w-10 origin-left transform-gpu text-gray-900 transition-all duration-200 ease-out group-hover:scale-90 group-hover:text-[#875BF8]" />
+        <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+        <p className="max-w-lg text-gray-600 text-sm leading-relaxed">
+          {description}
+        </p>
       </div>
 
       {href && cta && (
         <div
           className={cn(
-            "pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:hidden",
+            "pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-200 ease-out group-hover:translate-y-0 group-hover:opacity-100 lg:hidden",
           )}
         >
           <Button
             variant="link"
             size="sm"
-            className="pointer-events-auto p-0 text-black"
+            className="pointer-events-auto p-0 text-gray-900 hover:text-[#875BF8]"
             render={<a href={href} />}
             nativeButton={false}
           >
@@ -91,13 +95,13 @@ const BentoCard = ({
     {href && cta && (
       <div
         className={cn(
-          "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex",
+          "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-200 ease-out group-hover:translate-y-0 group-hover:opacity-100 lg:flex",
         )}
       >
         <Button
           variant="link"
           size="sm"
-          className="pointer-events-auto p-0 text-black"
+          className="pointer-events-auto p-0 text-gray-900 hover:text-[#875BF8]"
           render={<a href={href} />}
           nativeButton={false}
         >
@@ -107,7 +111,7 @@ const BentoCard = ({
       </div>
     )}
 
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/3 group-hover:dark:bg-neutral-800/10" />
+    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-200 ease-out group-hover:bg-[#875BF8]/[0.02]" />
   </div>
 );
 
