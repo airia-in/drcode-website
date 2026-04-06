@@ -100,7 +100,7 @@ export const Card = ({
         boxShadow:
           "0 2px 4px rgba(15,23,42,0.04), 0 12px 28px rgba(15,23,42,0.08), 0 28px 64px rgba(15,23,42,0.12)",
       }}
-      className="relative z-0 mx-auto mt-8 h-[26rem] w-full max-w-5xl overflow-hidden rounded-[28px] border-[3px] border-slate-200/90 bg-gradient-to-b from-white to-slate-50/90 p-2 shadow-2xl sm:mt-10 md:mt-14 md:h-[38rem] md:rounded-[32px] md:p-5"
+      className="relative z-0 mx-auto -mt-3 h-[26rem] w-full max-w-5xl overflow-hidden rounded-[28px] border-[3px] border-slate-200/90 bg-gradient-to-b from-white to-slate-50/90 p-2 shadow-2xl sm:-mt-5 md:-mt-8 md:h-[38rem] md:rounded-[32px] md:p-5"
     >
       <BorderBeam
         size={90}

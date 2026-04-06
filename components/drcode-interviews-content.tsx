@@ -110,7 +110,7 @@ export function DrcodeInterviewsContent() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <div className="border-b border-border/60 bg-gradient-to-b from-background via-background to-muted/25">
-        <div className="mx-auto flex max-w-6xl flex-col overflow-hidden px-4 pb-10 pt-20 md:px-6 md:pb-16 md:pt-24">
+        <div className="mx-auto flex max-w-6xl flex-col overflow-hidden px-4 pb-10 pt-14 md:px-6 md:pb-16 md:pt-16">
           <ContainerScroll
             titleComponent={
               <div className="mx-auto max-w-[42rem] md:max-w-4xl">

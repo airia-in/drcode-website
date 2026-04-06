@@ -5,6 +5,10 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { HeroEntranceProvider } from "@/components/hero-entrance-context";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://drcode.ai");
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://drcode.ai"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
@@ -64,6 +68,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  themeColor: "#875BF8",
+  applicationName: "DrCode",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -78,8 +84,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://drcode.ai",
-    title: "DrCode  AI Venture Studio",
+    url: siteUrl,
+    title: "DrCode AI Venture Studio",
     description:
       "DrCode is an AI Venture Studio that builds scalable AI products from idea to production. We help startups and enterprises turn concepts into successful AI systems.",
     siteName: "DrCode",
@@ -124,13 +130,6 @@ export default function RootLayout({
       lang="en"
       className={cn("font-sans", plusJakartaSans.variable, outfit.variable)}
     >
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#875BF8" />
-        <meta name="msapplication-TileColor" content="#875BF8" />
-        <meta name="application-name" content="DrCode" />
-        <meta name="mobile-web-app-capable" content="yes" />
-      </head>
       <body className={cn("bg-background text-foreground antialiased")}>
         <HeroEntranceProvider>
           <Navbar />
