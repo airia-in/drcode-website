@@ -18,12 +18,12 @@ const reviews = [
     img: AVATARS.womanLong,
   },
   {
-    name: "Aditya Ji",
+    name: "Aditya",
     body: "They turned a fuzzy idea into something we could put in front of real users in weeks. No endless planning, just steady, visible progress.",
     img: AVATARS.manShort,
   },
   {
-    name: "Yourmitra",
+    name: "Sai Krishna",
     body: "Communication stayed direct and the work felt production-ready from the first milestone. We could trust what shipped.",
     img: AVATARS.manLong,
   },

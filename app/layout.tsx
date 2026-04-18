@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { HeroEntranceProvider } from "@/components/hero-entrance-context";
+import SmoothScroll from "@/components/smooth-scroll";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -131,6 +132,7 @@ export default function RootLayout({
       className={cn("font-sans", plusJakartaSans.variable, outfit.variable)}
     >
       <body className={cn("bg-background text-foreground antialiased")}>
+        <SmoothScroll />
         <HeroEntranceProvider>
           <Navbar />
           {children}
